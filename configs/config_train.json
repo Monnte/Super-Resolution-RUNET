@@ -1,0 +1,17 @@
+{
+	"model":"RUNET", 
+	"loss":"PERCEPTUAL",
+	"loss_layers": [0,1,2,3],
+
+	"epochs":300,
+	"upscale_factor":4,
+	"crop_size":128,
+	"batch_size":8,
+	"lr":0.001,
+	"dataset_train":"./datasets/comics_train",
+	"dataset_valid":"./datasets/comics_valid",
+
+
+	"save_path":"./",
+	"save_name":"runet"
+}

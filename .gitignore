@@ -1,6 +1,9 @@
 .ipynb_checkpoints
 outputs
 datasets
+datasets_mine
+other
+experiments
 savedModels
 .vscode
 __pycache__

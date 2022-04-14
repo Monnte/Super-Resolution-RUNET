@@ -1,0 +1,7 @@
+{
+	"upscale_factor":4,
+	"crop_size":1024,
+	"dataset_valid":"./datasets/comics_valid",
+	"model":"unet_mse.pt",
+	"debug":false
+}
