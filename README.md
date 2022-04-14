@@ -3,7 +3,7 @@
 Implementation of U-Net and RUNet architecture for super-resolution task with a focus on comics images.
 
 
-## Quick startEvaluationcies
+## Quick start
 
 ```
 pip install -r requirements.txt
@@ -19,7 +19,13 @@ Script used to train deep neural network on given dataset.
 
 usage: train.py [-h] --config CONFIG
 
-optional arguments:Evaluation
+optional arguments:
+  -h, --help       show this help message and exit
+  --config CONFIG  config file path
+```
+
+##### Structure of config file for training 
+```json
 {
 	"model":"UNET",
 	"loss":"MSE",
@@ -39,21 +45,21 @@ optional arguments:Evaluation
 }
 ```
 **Requried:**
-- model -> model used for traning -> available values: `UNET, RUNET`
-- loss -> loss function used for traning -> available values: `MSE, PERCEPTUAL` (Mean Square Error or Perceptual Loss fucntion)
-- epochs -> number of train epochs
-- upscale_factor -> upscale factor to train with
-- crop_size -> crop size of dataset images feeded to model
-- batch_size -> size of batch
-- lr -> starting learning rate for model
-- dataset_train -> path to folder with dataset train images
-- dataset_valid -> path to folder with dataset validation images
-- save_path -> path where model should be saved
-- save_name -> name as model should be saved
+- `model` -> model used for traning -> available values: `UNET, RUNET`
+- `loss` -> loss function used for traning -> available values: `MSE, PERCEPTUAL` (Mean Square Error or Perceptual Loss fucntion)
+- `epochs` -> number of train epochs
+- `upscale_factor` -> upscale factor to train with
+- `crop_size` -> crop size of dataset images feeded to model
+- `batch_size` -> size of batch
+- `lr` -> starting learning rate for model
+- `dataset_train` -> path to folder with dataset train images
+- `dataset_valid` -> path to folder with dataset validation images
+- `save_path` -> path where model should be saved
+- `save_name` -> name as model should be saved
 
 **Optional:**
-- loss_layers -> used to determine number of extracted blocks from loss network used for perceptual loss
-- debug -> turn on debug mode. At the end of the training, validation and training loss is saved to the cwd directory in numpy format
+- `loss_layers` -> used to determine number of extracted blocks from loss network used for perceptual loss
+- `debug` -> turn on debug mode. At the end of the training, validation and training loss is saved to the cwd directory in numpy format
 
 
 ## Validation
@@ -65,7 +71,7 @@ usage: valid.py [-h] --config CONFIG
 
 optional arguments:
   -h, --help       show this help message and exit
-  --config CONFIG  Config file path
+  --config CONFIG   onfig file path
 ```
 
 ##### Structure of config file for validation 
@@ -78,14 +84,14 @@ optional arguments:
 }
 ```
 **Requried:**
-- model -> path to file of saved model
-- upscale_factor -> upscale factor to valid with
-- crop_size -> crop size of dataset images feeded to model
-- dataset_valid -> path to folder with dataset validation images
+- `model` -> path to file of saved model
+- `upscale_factor` -> upscale factor to valid with
+- `crop_size` -> crop size of dataset images feeded to model
+- `dataset_valid` -> path to folder with dataset validation images
 
 **Optional:**
-- loss_layers -> used to determine number of extracted blocks from loss network used for perceptual loss
-- debug -> turn on debug mode. Save high-resolutioin,bilinear,output images durning the traning to cwd.
+- `loss_layers` -> used to determine number of extracted blocks from loss network used for perceptual loss
+- `debug` -> turn on debug mode. Save high-resolutioin,bilinear,output images durning the traning to cwd.
 
 ## Use model
 Script to use trained model.
@@ -96,10 +102,10 @@ usage: main.py [-h] --image IMAGE --model MODEL [--upscale UPSCALE] [--device DE
 
 optional arguments:
   -h, --help         show this help message and exit
-  --image IMAGE      Path to image file
-  --model MODEL      Path to model file
-  --upscale UPSCALE  Upscale factor
-  --device DEVICE 	 Device CPU or CUDA
+  --image IMAGE      path to image file
+  --model MODEL      path to model file
+  --upscale UPSCALE  upscale factor
+  --device DEVICE    device CPU or CUDA
 ```
 Examples:
 -> upscale by factor 2 default value

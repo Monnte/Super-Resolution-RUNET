@@ -33,10 +33,10 @@ def image_transform(image, upscale_factor):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--image", action="store", help="Path to image file", required=True)
-    parser.add_argument("--model", action="store", help="Path to model file", required=True)
-    parser.add_argument("--upscale", action="store", type=int, default=2, help="Upscale factor")
-    parser.add_argument("--device", action="store", default="cpu", help="Device CPU or CUDA")
+    parser.add_argument("--image", action="store", help="path to image file", required=True)
+    parser.add_argument("--model", action="store", help="path to model file", required=True)
+    parser.add_argument("--upscale", action="store", type=int, default=2, help="upscale factor")
+    parser.add_argument("--device", action="store", default="cpu", help="device CPU or CUDA")
 
     args = parser.parse_args()
 

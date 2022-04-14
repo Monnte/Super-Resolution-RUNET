@@ -93,7 +93,7 @@ def train(train_loader, valid_loader, epochs, model, loss_function, optimizer, s
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--config", action="store", default="config_train.json", help="Config file path", required=True)
+    parser.add_argument("--config", action="store", default="config_train.json", help="config file path", required=True)
     args = parser.parse_args()
 
     assert exists(args.config), "Config file doesn't exists. Create 'config.json' file"
