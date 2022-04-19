@@ -1,18 +1,25 @@
 # Super-resolution using deep neural networks (U-Net / RUNet)
 
-**Python 3.9.5**
+**Python 3.9.5** | [**Conda package manager**](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html)
 
 Implementation of U-Net and RUNet architecture for super-resolution task with a focus on comics images.
 
 
 ## Quick start
+**Prepare enviroment:**
+```
+conda create -n BP-py395 python=3.9.5
+conda activate BP-py395
+```
 
+**Install dependencies:**
 ```
 pip install -r requirements.txt
 ```
-2. Train -> `./src/train.py --config "config_path"`
-3. Validation -> `./src/valid.py --config "config_path"`
-4. Use model -> `./src/main.py -h`
+**Usage:**
+1. Train -> `./src/train.py --config "config_path"`
+2. Validation -> `./src/valid.py --config "config_path"`
+3. Use model -> `./src/main.py -h`
 
 ## Traning
 Script used to train deep neural network on given dataset.
