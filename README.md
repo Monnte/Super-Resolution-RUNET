@@ -1,5 +1,7 @@
 # Super-resolution using deep neural networks (U-Net / RUNet)
 
+**Python 3.9.5**
+
 Implementation of U-Net and RUNet architecture for super-resolution task with a focus on comics images.
 
 
